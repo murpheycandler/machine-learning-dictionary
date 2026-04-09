@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Dictionary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 Machine Learning Dictionary</h1>
+            <p>A personal reference for ML terms and concepts</p>
+        </header>
+
+        <div class="controls">
+            <div class="search-section">
+                <input type="text" id="searchInput" placeholder="Search terms..." class="search-input">
+                <button id="clearSearch" class="btn-secondary">Clear</button>
+            </div>
+            
+            <div class="sort-section">
+                <label for="sortSelect">Sort by:</label>
+                <select id="sortSelect">
+                    <option value="alphabetical">Alphabetical (A-Z)</option>
+                    <option value="alphabetical-reverse">Alphabetical (Z-A)</option>
+                    <option value="date-added">Date Added (Newest)</option>
+                    <option value="date-added-oldest">Date Added (Oldest)</option>
+                    <option value="date-modified">Date Modified (Recent)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="add-term-section">
+            <h2>Add / Edit Term</h2>
+            <form id="termForm">
+                <input type="hidden" id="editingId" value="">
+                <div class="form-group">
+                    <input type="text" id="termInput" placeholder="Enter term..." required>
+                </div>
+                <div class="form-group">
+                    <textarea id="definitionInput" placeholder="Enter definition..." rows="4" required></textarea>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" id="submitBtn" class="btn-primary">Add Term</button>
+                    <button type="button" id="cancelBtn" class="btn-secondary" style="display: none;">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="dictionary-section">
+            <h2>Dictionary Entries (<span id="entryCount">0</span>)</h2>
+            <div id="dictionaryList" class="dictionary-list">
+                <!-- Terms will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
